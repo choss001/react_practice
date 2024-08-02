@@ -25,10 +25,11 @@ function generatePrimes(quota) {
 const quota = document.querySelector("#quota");
 const output = document.querySelector("#output");
 
-function generatePrimesButton(value){
-  console.log(this);
-  const primes = generatePrimes(value);
+function generatePrimesButton(){
+  const value = document.getElementById("quota").value
+  generatePrimes(value);
   console.log(`Finished generating ${value} primes!`);
+  document.getElementById("output").innerHTML = `Finished generating ${value} primes!`;
 }
 
 /*document.querySelector("#generate").addEventListener("click", () => {
