@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import '@/app/ui/global.css'; 
 import {inter, lusitana} from '@/app/ui/fonts';
-=======
-import '@/app/ui/global.css';
->>>>>>> b244874c352db1a5be13b10b315596579c2329bc
 
 export default function RootLayout({
   children,
