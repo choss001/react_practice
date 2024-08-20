@@ -2,13 +2,10 @@
  import { db } from '@vercel/postgres';
  import { invoices, customers, revenue, users } from '../lib/placeholder-data';
 
- console.log(`start ! ${Date()}`);
  const client = await db.connect();
 
- console.log(`1,  ${Date()}`);
  async function seedUsers() {
    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-   console.log(`2,  ${Date()}`);
    await client.sql`
      CREATE TABLE IF NOT EXISTS users (
        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
@@ -17,11 +14,9 @@
        password TEXT NOT NULL
      );
    `;
-   console.log(`3,  ${Date()}`);
 
    const insertedUsers = await Promise.all(
      users.map(async (user) => {
-       console.log(`user = ${user.id}, user.name =${user.name}`)
        const hashedPassword = await bcrypt.hash(user.password, 10);
        return client.sql`
          INSERT INTO users (id, name, email, password)
@@ -33,10 +28,7 @@
 
    return insertedUsers;
  }
- console.log(`${seedUsers().then(result => {console.log(`${result.entries().next().value} why!!!!!!`)})}`)
  
- console.log(`seddUsers = ${seedUsers()}`);
- console.log(`4,  ${Date()}`);
 
  async function seedInvoices() {
    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
