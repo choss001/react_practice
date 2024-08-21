@@ -1,11 +1,14 @@
-export default function Page(){
-    return (
-        <div className="flex space-x-10">
-            <div className="h-5">test</div>
-            <div className="h-5">test</div>
-            <div className="h-5">test</div>
-            <div className="h-5">test</div>
-        </div>
+export default function skeletons(){
+    return(
+        <div>
+            <div className="text-xl">Dash baord</div>
+            <div className="flex h-80 w-full">
+                <div className="grow bg-slate-300">temp</div>
 
-    );
+                <div className="grow bg-slate-300 ml-5">temp</div>
+                <div className="grow bg-slate-300 ml-5">temp</div>
+                <div className="grow bg-slate-300 ml-5">temp</div>
+            </div>
+        </div>
+    )
 }
