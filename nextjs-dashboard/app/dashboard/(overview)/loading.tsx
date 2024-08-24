@@ -1,4 +1,4 @@
-import Skeletons from '@/app/ui/skeletons-temp';
+import Skeletons from '@/app/ui/skeletons';
 
 export default function Loading() {
     return <Skeletons></Skeletons>;
