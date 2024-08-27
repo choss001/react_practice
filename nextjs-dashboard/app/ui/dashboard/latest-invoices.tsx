@@ -7,6 +7,10 @@ import { fetchLatestInvoices } from '@/app/lib/data'
 
 export default async function LatestInvoices() {
   const latestInvoices = await fetchLatestInvoices();
+  console.log("what?");
+  for (let i = 0; i < latestInvoices.length; i++){
+    console.log(latestInvoices[i]);
+  }
   return (
     <div className="flex w-full flex-col md:col-span-4">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
