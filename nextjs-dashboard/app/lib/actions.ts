@@ -1,28 +1,22 @@
 'use server';
-
 import { z } from 'zod';
-
+ 
 const FormSchema = z.object({
-    id: z.string(),
-    customerId: z.string(),
-    amount: z.coerce.number(),
-    status: z.enum(['pending', 'paid']),
-    date: z.string(),
+  id: z.string(),
+  customerId: z.string(),
+  amount: z.coerce.number(),
+  status: z.enum(['pending', 'paid']),
+  date: z.string(),
 });
-
+ 
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
-
+ 
 export async function createInvoice(formData: FormData) {
-
-    const rawFormObject = Object.fromEntries(formData.entries())
     const rawFormData = {
-        customerId: formData.get('customerId'),
-        amount: formData.get('amount'),
-        status: formData.get('status'),
-
-      };
-      // Test it out:
-      console.log(rawFormData);
-      console.log(`Object : ${rawFormObject.amount}`);
-      console.log(`typeof amount : ${typeof rawFormData.amount}`)
-}
+      customerId: formData.get('customerId'),
+      amount: formData.get('amount'),
+      status: formData.get('status'),
+    };
+    // Test it out:
+    console.log(rawFormData);
+  }
