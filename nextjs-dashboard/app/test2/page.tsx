@@ -2,6 +2,24 @@ import Card from '@/app/ui/test2/card';
 import Graph from '@/app/ui/test2/graph';
 
 export default function skeletons(){
+    let greeting : (name: number) => string;
+
+    greeting = function greetingTest(name: number){
+        return `Hi ${name}`;
+        console.log('test');
+        
+    }
+    let items :(number | string | null)[];
+    items = [0, 1, null, 'Hi'];
+
+    let person = {
+        greet: () => `Hi, ${name}`,
+    }
+    person.greet;
+
+
+
+    
     return(
         <div>
             <div className="text-xl mb-9">Dash baord</div>
