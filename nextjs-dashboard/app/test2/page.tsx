@@ -23,6 +23,18 @@ class FullTimeEmployee extends Employee {
 
 let employee = new FullTimeEmployee('Jhon', "Doe", 9);
 
+function getRandomElement<T>(items: T[]): T {
+    let randomIndex = Math.floor(Math.random() * items.length);
+    return items[randomIndex];
+}
+
+let test = [2, 5];
+
+function prop<T, K extends keyof T>(obj: T, key: K) {
+    return obj[key];
+}
+let str = prop({ name: 'John' }, 'name');
+
 export default function skeletons(){
     let greeting : (name: number) => string;
 
