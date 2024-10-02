@@ -23,7 +23,7 @@ export type State = {
     amount?: string[];
     status?: string[];
   };
-  message?: string | null;
+  message: string;
 };
  
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
@@ -63,7 +63,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
 // Use Zod to update the expected types
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
  
-export async function updateInvoice(id: string, formData: FormData) {
+export async function updateInvoice(id: string, prevState: State, formData: FormData) {
   const { customerId, amount, status } = UpdateInvoice.parse({
     customerId: formData.get('customerId'),
     amount: formData.get('amount'),
