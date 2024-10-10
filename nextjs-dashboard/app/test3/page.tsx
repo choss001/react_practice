@@ -9,8 +9,9 @@ export default function StatefulForm({}) {
   const [state, formAction] = useActionState(increment, 100);
   return (
     <form>
-      {state}
-      <button formAction={formAction}>Increment</button>
+        {state}
+        <br></br>
+        <button formAction={formAction}>Increment</button>
     </form>
   )
 }
